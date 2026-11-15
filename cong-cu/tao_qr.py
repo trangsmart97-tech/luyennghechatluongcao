@@ -13,7 +13,7 @@ import pathlib
 import qrcode
 from qrcode.constants import ERROR_CORRECT_M
 
-DIA_CHI_GOC = "https://trangsmart97-tech.github.io/luyennghechatluongcao/"
+DIA_CHI_GOC = "https://luyennghe.tramtuduy.org/"
 
 goc = pathlib.Path(__file__).resolve().parent.parent
 thu_muc_qr = goc / "qr"

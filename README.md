@@ -1,7 +1,7 @@
 # Luyện nghe chất lượng cao
 
 Trang nghe tiếng Anh tự luyện ở nhà cho lớp luyện thi lớp 6 Trần Đại Nghĩa.
-Địa chỉ sau khi bật GitHub Pages: https://trangsmart97-tech.github.io/luyennghechatluongcao/
+Địa chỉ của trang: https://luyennghe.tramtuduy.org/
 
 ## Trong kho có gì
 
