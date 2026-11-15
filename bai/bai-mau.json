@@ -1,0 +1,59 @@
+{
+  "ma": "bai-mau",
+  "laBaiMau": true,
+  "tieuDe": "Bài mẫu để xem giao diện",
+  "tuan": 0,
+  "bac": "Giữa B1",
+  "giong": "Mỹ",
+  "thoiLuong": "1 phút",
+  "media": "media/bai-mau.mp4",
+  "nguon": {
+    "ten": "Điền tên nguồn của bản ghi",
+    "duongDan": "",
+    "giayPhep": "Điền giấy phép, ví dụ Phạm vi công cộng"
+  },
+  "viDu": {
+    "cau": "This is the example sentence with ____ in it.",
+    "dapAn": "an example answer"
+  },
+  "dienTu": [
+    {
+      "cau": "Placeholder sentence one. The blank goes ____ .",
+      "dapAn": ["here"],
+      "giaiThich": "Điền lời giải thích: câu nào trong bản ghi chứa đáp án."
+    },
+    {
+      "cau": "Placeholder sentence two has ____ in the middle.",
+      "dapAn": ["a blank", "one blank"],
+      "giaiThich": "Dòng dapAn nhận nhiều cách viết đúng."
+    },
+    {
+      "cau": "____ starts placeholder sentence three.",
+      "dapAn": ["A blank"],
+      "giaiThich": "Trang không phân biệt chữ hoa và chữ thường."
+    },
+    {
+      "cau": "Placeholder sentence four ends with ____ .",
+      "dapAn": ["up to four words"],
+      "giaiThich": "Câu trả lời quá 4 từ bị tính là chưa đúng, như luật của đề thật."
+    }
+  ],
+  "tracNghiem": [
+    {
+      "cau": "Placeholder question about the main idea.",
+      "luaChon": ["Option A", "Option B", "Option C"],
+      "dung": 1,
+      "giaiThich": "Số ở dòng dung đếm từ 0: 0 là A, 1 là B, 2 là C."
+    },
+    {
+      "cau": "Placeholder question about a detail.",
+      "luaChon": ["Option A", "Option B", "Option C"],
+      "dung": 0,
+      "giaiThich": "Điền lời giải thích cho câu này."
+    }
+  ],
+  "banChepLoi": "Dán bản chép lời đầy đủ của bản ghi vào đây.\nMỗi lần xuống dòng trong tệp sẽ thành một lần xuống dòng trên trang.",
+  "cumTu": [
+    { "cum": "a phrase worth learning", "nghia": "một cụm từ đáng học" }
+  ]
+}

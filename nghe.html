@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Luyện nghe – Trạm Tư Duy</title>
+<style>
+  :root {
+    --nen: #f6f4ee; --the: #ffffff; --chu: #1f2a37; --chu-nhat: #5b6676;
+    --chinh: #0f6e6e; --chinh-nhat: #e2f1f0; --vien: #d9d4c7;
+    --dung: #1c7c3c; --dung-nen: #e6f4ea; --sai: #b3401f; --sai-nen: #fbeae4;
+    --vang: #f2b632;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--nen); color: var(--chu);
+    font-family: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif; font-size: 17px; line-height: 1.55; }
+  header { background: var(--chinh); color: #fff; padding: 18px 16px; }
+  header .trong, main { max-width: 760px; margin: 0 auto; }
+  header a { color: #d6efee; font-size: 14px; text-decoration: none; }
+  header h1 { margin: 6px 0 8px; font-size: 24px; line-height: 1.25; }
+  .nhan { display: flex; flex-wrap: wrap; gap: 8px; }
+  .nhan span { background: rgba(255,255,255,.16); border-radius: 999px; padding: 3px 12px; font-size: 14px; }
+  main { padding: 16px; }
+  section { background: var(--the); border: 1px solid var(--vien); border-radius: 14px; padding: 18px; margin-bottom: 16px; }
+  h2 { margin: 0 0 10px; font-size: 19px; color: var(--chinh); }
+  .ghichu { color: var(--chu-nhat); font-size: 15px; margin: 0 0 12px; }
+  video, audio { width: 100%; border-radius: 10px; background: #000; }
+  audio { background: transparent; }
+  .tocdo { display: flex; align-items: center; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .tocdo button { border: 2px solid var(--chinh); background: #fff; color: var(--chinh);
+    border-radius: 10px; padding: 8px 16px; font-size: 16px; font-weight: 600; cursor: pointer; min-width: 64px; }
+  .tocdo button[aria-pressed="true"] { background: var(--chinh); color: #fff; }
+  .tocdo button:disabled { border-color: var(--vien); color: #a7a295; cursor: not-allowed; }
+  .dem { margin-top: 10px; font-size: 15px; background: var(--chinh-nhat); border-radius: 10px; padding: 8px 12px; }
+  .canhbao { background: #fff6dc; border: 1px solid var(--vang); border-radius: 10px; padding: 10px 12px; font-size: 15px; margin-bottom: 12px; }
+  ol.cau { margin: 0; padding-left: 0; list-style: none; counter-reset: c; }
+  ol.cau > li { counter-increment: c; padding: 14px 0; border-top: 1px dashed var(--vien); }
+  ol.cau > li:first-child { border-top: 0; padding-top: 4px; }
+  ol.cau > li::before { content: "Question " counter(c) "."; font-weight: 700; color: var(--chinh); display: block; margin-bottom: 4px; }
+  input[type="text"] { font: inherit; border: 0; border-bottom: 2px solid var(--chinh); background: var(--chinh-nhat);
+    padding: 2px 8px; min-width: 150px; max-width: 100%; border-radius: 6px 6px 0 0; }
+  input[type="text"]:focus { outline: 3px solid var(--vang); }
+  .vidu { background: var(--chinh-nhat); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; font-size: 16px; }
+  label.chon { display: block; border: 2px solid var(--vien); border-radius: 10px; padding: 8px 12px; margin-top: 8px; cursor: pointer; }
+  label.chon:has(input:checked) { border-color: var(--chinh); background: var(--chinh-nhat); }
+  label.chon input { margin-right: 8px; transform: scale(1.2); }
+  .nut { display: block; width: 100%; border: 0; border-radius: 12px; background: var(--chinh); color: #fff;
+    font: inherit; font-weight: 700; padding: 14px; cursor: pointer; }
+  .nut:disabled { background: #a7a295; cursor: not-allowed; }
+  .ketqua { font-size: 15px; margin-top: 8px; border-radius: 8px; padding: 8px 10px; }
+  .ketqua.dung { background: var(--dung-nen); color: var(--dung); }
+  .ketqua.sai { background: var(--sai-nen); color: var(--sai); }
+  .diem { font-size: 22px; font-weight: 700; color: var(--chinh); margin: 0 0 6px; }
+  .chep { white-space: pre-wrap; background: #fbfaf6; border-left: 4px solid var(--chinh); padding: 12px 14px; border-radius: 0 10px 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 16px; }
+  td { border-top: 1px solid var(--vien); padding: 6px 4px; vertical-align: top; }
+  td:first-child { font-weight: 600; width: 45%; }
+  footer { max-width: 760px; margin: 0 auto; padding: 0 16px 32px; color: var(--chu-nhat); font-size: 14px; }
+  footer a { color: var(--chinh); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header><div class="trong">
+  <a href="index.html">← Danh sách bài nghe</a>
+  <h1 id="tieude">Đang mở bài nghe…</h1>
+  <div class="nhan" id="nhan"></div>
+</div></header>
+
+<main>
+  <div class="canhbao" id="loi" hidden></div>
+
+  <section id="khung-nghe" hidden>
+    <h2>Nghe</h2>
+    <p class="ghichu">Con nghe 2 lần ở tốc độ thường, giống như trong phòng thi. Nghe đủ 2 lần rồi con mới đổi được tốc độ.</p>
+    <div id="may-phat"></div>
+    <div class="tocdo" role="group" aria-label="Tốc độ nghe">
+      <span>Tốc độ:</span>
+      <button type="button" data-tocdo="0.75" aria-pressed="false" disabled>0,75</button>
+      <button type="button" data-tocdo="1" aria-pressed="true">1</button>
+      <button type="button" data-tocdo="1.25" aria-pressed="false" disabled>1,25</button>
+    </div>
+    <div class="dem" id="dem" aria-live="polite"></div>
+  </section>
+
+  <form id="bai-lam" hidden novalidate>
+    <section>
+      <h2>Phần 1. Điền vào chỗ trống</h2>
+      <p class="ghichu">Write NO MORE THAN four words in each blank. Mỗi chỗ trống con viết không quá 4 từ.</p>
+      <div class="vidu" id="vidu" hidden></div>
+      <ol class="cau" id="dien-tu"></ol>
+    </section>
+    <section id="khung-tn">
+      <h2>Phần 2. Chọn câu trả lời đúng</h2>
+      <ol class="cau" id="trac-nghiem"></ol>
+    </section>
+    <section>
+      <p class="diem" id="diem" hidden></p>
+      <button class="nut" type="submit" id="nop">Nộp bài</button>
+      <p class="ghichu" id="nhac-nop" style="margin:10px 0 0"></p>
+    </section>
+  </form>
+
+  <section id="khung-chep" hidden>
+    <h2>Phần 3. Bản chép lời</h2>
+    <p class="ghichu">Con nghe lại và nhìn theo từng câu. Lúc này con đổi tốc độ được rồi.</p>
+    <div class="chep" id="chep"></div>
+    <table id="cum-tu"></table>
+  </section>
+</main>
+
+<footer id="nguon"></footer>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var SO_LAN_NGHE = 2;
+  var bai = null, mayPhat = null, soLanNghe = 0, daNop = false, moKhoa = false;
+
+  function tao(the, chu, lop) {
+    var e = document.createElement(the);
+    if (chu !== undefined && chu !== null) e.textContent = chu;
+    if (lop) e.className = lop;
+    return e;
+  }
+  function baoLoi(chu) { var o = $("loi"); o.textContent = chu; o.hidden = false; }
+
+  // So đáp án: không phân biệt hoa thường, bỏ dấu câu ở hai đầu, gộp khoảng trắng.
+  function chuan(s) {
+    return String(s || "").toLowerCase()
+      .replace(/[‘’]/g, "'")
+      .replace(/^[\s.,;:!?"'“”]+|[\s.,;:!?"'“”]+$/g, "")
+      .replace(/\s+/g, " ");
+  }
+  function demTu(s) { var t = chuan(s); return t ? t.split(" ").length : 0; }
+
+  function capNhatDem() {
+    var o = $("dem");
+    if (moKhoa) {
+      o.textContent = "Con đã nghe đủ " + SO_LAN_NGHE + " lần. Bây giờ con chọn tốc độ được rồi.";
+    } else {
+      o.textContent = "Con đã nghe " + soLanNghe + " trên " + SO_LAN_NGHE + " lần.";
+    }
+    $("nhac-nop").textContent = (moKhoa || daNop) ? "" :
+      "Con nghe đủ " + SO_LAN_NGHE + " lần rồi mới nộp bài được nhé.";
+    $("nop").disabled = daNop || !moKhoa;
+  }
+  function moKhoaTocDo() {
+    moKhoa = true;
+    document.querySelectorAll(".tocdo button").forEach(function (b) { b.disabled = false; });
+    capNhatDem();
+  }
+  function datTocDo(v) {
+    if (mayPhat) mayPhat.playbackRate = v;
+    document.querySelectorAll(".tocdo button").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(parseFloat(b.dataset.tocdo) === v));
+    });
+  }
+
+  function dungMayPhat() {
+    var duoi = String(bai.media || "").split(".").pop().toLowerCase();
+    var laTieng = ["mp3", "m4a", "wav", "ogg"].indexOf(duoi) !== -1;
+    mayPhat = document.createElement(laTieng ? "audio" : "video");
+    mayPhat.controls = true;
+    mayPhat.preload = "metadata";
+    mayPhat.setAttribute("playsinline", "");
+    mayPhat.src = bai.media;
+    mayPhat.addEventListener("ended", function () {
+      soLanNghe += 1;
+      if (soLanNghe >= SO_LAN_NGHE && !moKhoa) moKhoaTocDo(); else capNhatDem();
+    });
+    mayPhat.addEventListener("ratechange", function () {
+      if (!moKhoa && mayPhat.playbackRate !== 1) mayPhat.playbackRate = 1;
+    });
+    mayPhat.addEventListener("error", function () {
+      baoLoi("Chưa mở được bản ghi của bài này. Con báo cô giúp nhé. Trong lúc chờ, con vẫn xem được câu hỏi.");
+      moKhoaTocDo();
+    });
+    $("may-phat").appendChild(mayPhat);
+    document.querySelectorAll(".tocdo button").forEach(function (b) {
+      b.addEventListener("click", function () { datTocDo(parseFloat(b.dataset.tocdo)); });
+    });
+  }
+
+  // Câu điền từ: chỗ trống viết là ____ (bốn dấu gạch dưới) trong dữ liệu.
+  function dungDienTu() {
+    var ds = $("dien-tu");
+    (bai.dienTu || []).forEach(function (c, i) {
+      var li = tao("li");
+      var manh = String(c.cau).split("____");
+      li.appendChild(document.createTextNode(manh[0]));
+      var o = tao("input");
+      o.type = "text"; o.name = "dt" + i; o.autocomplete = "off";
+      o.setAttribute("autocapitalize", "off"); o.spellcheck = false;
+      o.setAttribute("aria-label", "Chỗ trống câu " + (i + 1));
+      li.appendChild(o);
+      li.appendChild(document.createTextNode(manh.slice(1).join("____")));
+      ds.appendChild(li);
+    });
+    if (bai.viDu && bai.viDu.cau) {
+      var v = $("vidu");
+      var manh = String(bai.viDu.cau).split("____");
+      v.appendChild(tao("strong", "Example: "));
+      v.appendChild(document.createTextNode(manh[0]));
+      v.appendChild(tao("u", bai.viDu.dapAn || ""));
+      v.appendChild(document.createTextNode(manh.slice(1).join("")));
+      v.hidden = false;
+    }
+  }
+  function dungTracNghiem() {
+    var ds = $("trac-nghiem"), cac = bai.tracNghiem || [];
+    if (!cac.length) { $("khung-tn").hidden = true; return; }
+    cac.forEach(function (c, i) {
+      var li = tao("li");
+      li.appendChild(tao("div", c.cau));
+      (c.luaChon || []).forEach(function (lc, j) {
+        var nhan = tao("label", null, "chon");
+        var o = tao("input"); o.type = "radio"; o.name = "tn" + i; o.value = String(j);
+        nhan.appendChild(o);
+        nhan.appendChild(document.createTextNode(String.fromCharCode(65 + j) + ". " + lc));
+        li.appendChild(nhan);
+      });
+      ds.appendChild(li);
+    });
+  }
+
+  function hienKetQua(li, dung, chu) {
+    li.appendChild(tao("div", chu, "ketqua " + (dung ? "dung" : "sai")));
+  }
+  function nopBai(e) {
+    e.preventDefault();
+    if (daNop || !moKhoa) return;
+    daNop = true;
+    var diem = 0, tong = 0;
+    var mauDT = $("dien-tu").children, mauTN = $("trac-nghiem").children;
+
+    (bai.dienTu || []).forEach(function (c, i) {
+      tong += 1;
+      var o = mauDT[i].querySelector("input");
+      var tra = o.value, dapAn = [].concat(c.dapAn || []);
+      var quaDai = demTu(tra) > 4;
+      var dung = !quaDai && dapAn.some(function (d) { return chuan(d) === chuan(tra); });
+      if (dung) diem += 1;
+      o.readOnly = true;
+      var chu = dung ? "Đúng rồi. " : (quaDai ? "Con viết quá 4 từ. " : "Chưa đúng. ");
+      chu += "Đáp án: " + dapAn[0] + ". " + (c.giaiThich || "");
+      hienKetQua(mauDT[i], dung, chu);
+    });
+    (bai.tracNghiem || []).forEach(function (c, i) {
+      tong += 1;
+      var chon = mauTN[i].querySelector("input:checked");
+      var dung = !!chon && parseInt(chon.value, 10) === c.dung;
+      if (dung) diem += 1;
+      mauTN[i].querySelectorAll("input").forEach(function (o) { o.disabled = true; });
+      var chu = (dung ? "Đúng rồi. " : "Chưa đúng. ") + "Đáp án: " +
+        String.fromCharCode(65 + c.dung) + ". " + (c.giaiThich || "");
+      hienKetQua(mauTN[i], dung, chu);
+    });
+
+    var d = $("diem");
+    d.textContent = "Con làm đúng " + diem + " trên " + tong + " câu.";
+    d.hidden = false;
+    $("nop").textContent = "Con đã nộp bài";
+    capNhatDem();
+
+    $("chep").textContent = bai.banChepLoi || "";
+    var bang = $("cum-tu");
+    (bai.cumTu || []).forEach(function (c) {
+      var tr = tao("tr"); tr.appendChild(tao("td", c.cum)); tr.appendChild(tao("td", c.nghia));
+      bang.appendChild(tr);
+    });
+    $("khung-chep").hidden = false;
+    d.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  function hienBai() {
+    document.title = bai.tieuDe + " – Luyện nghe";
+    $("tieude").textContent = bai.tieuDe;
+    var nhan = $("nhan");
+    [bai.tuan ? "Tuần " + bai.tuan : "", bai.bac, bai.giong ? "Giọng " + bai.giong : "", bai.thoiLuong]
+      .forEach(function (n) { if (n) nhan.appendChild(tao("span", n)); });
+    if (bai.laBaiMau) baoLoi("Đây là bài mẫu để xem giao diện. Bài này chưa có bản ghi thật.");
+    dungMayPhat(); dungDienTu(); dungTracNghiem();
+    $("khung-nghe").hidden = false;
+    $("bai-lam").hidden = false;
+    $("bai-lam").addEventListener("submit", nopBai);
+    capNhatDem();
+    if (bai.nguon && bai.nguon.ten) {
+      var f = $("nguon");
+      f.appendChild(document.createTextNode("Nguồn bản ghi: "));
+      if (bai.nguon.duongDan) {
+        var a = tao("a", bai.nguon.ten); a.href = bai.nguon.duongDan; a.rel = "noopener"; f.appendChild(a);
+      } else { f.appendChild(document.createTextNode(bai.nguon.ten)); }
+      if (bai.nguon.giayPhep) f.appendChild(document.createTextNode(". Giấy phép: " + bai.nguon.giayPhep + "."));
+    }
+  }
+
+  var ma = new URLSearchParams(location.search).get("bai") || "";
+  if (!/^[a-z0-9-]+$/.test(ma)) {
+    $("tieude").textContent = "Luyện nghe";
+    baoLoi("Đường dẫn chưa có mã bài. Con quay lại danh sách bài nghe để chọn bài nhé.");
+    return;
+  }
+  fetch("bai/" + ma + ".json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) { bai = d; hienBai(); })
+    .catch(function () {
+      $("tieude").textContent = "Luyện nghe";
+      baoLoi("Chưa tìm thấy bài “" + ma + "”. Con báo cô giúp nhé.");
+    });
+})();
+</script>
+</body>
+</html>
