@@ -14,6 +14,7 @@
   h1 { margin: 0 0 6px; font-size: 27px; }
   header p { margin: 0; color: #d6efee; }
   main { padding: 16px; }
+  #chao { max-width: 760px; margin: 16px auto 0; padding: 0 16px; }
   h2 { font-size: 18px; color: var(--chinh); margin: 22px 0 8px; }
   a.bai { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--the);
     border: 1px solid var(--vien); border-radius: 12px; padding: 12px 16px; margin-bottom: 8px; color: inherit; text-decoration: none; }
@@ -27,15 +28,33 @@
 <body>
 <header><div>
   <h1>Luyện nghe chất lượng cao</h1>
-  <p>Tiếng Anh thật, nghe như trong phòng thi. Con chọn bài của tuần này nhé.</p>
+  <p>Tiếng Anh thật, nghe như trong phòng thi. Bạn chọn bài của tuần này nhé.</p>
 </div></header>
+<p class="trong" id="chao" hidden></p>
 <main id="ds"><p class="trong">Đang mở danh sách bài…</p></main>
+<script src="cau-hinh.js"></script>
 <script>
 (function () {
   "use strict";
   var ds = document.getElementById("ds");
   function tao(the, chu, lop) { var e = document.createElement(the); if (chu) e.textContent = chu; if (lop) e.className = lop; return e; }
-  fetch("bai/danh-sach.json", { cache: "no-cache" })
+  // Mã riêng (?ma=…) cô gửi cho gia đình: nhớ trên máy này để bài nghe ghi vào hồ sơ.
+  var ma = new URLSearchParams(location.search).get("ma") || "";
+  try { if (/^[0-9a-z]{24,64}$/.test(ma)) localStorage.setItem("luyennghe-ma", ma); else ma = localStorage.getItem("luyennghe-ma") || ""; } catch (e) {}
+  if (!/^[0-9a-z]{24,64}$/.test(ma)) ma = "";
+  var daLam = {};
+  var hoiHoSo = !ma ? Promise.resolve() : fetch(CAU_HINH.supabase + "/rest/v1/rpc/ln_vao", {
+      method: "POST", headers: { "Content-Type": "application/json", apikey: CAU_HINH.khoaCongKhai },
+      body: JSON.stringify({ p_ma: ma }) })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d) return;
+      daLam = d.daLam || {};
+      var c = document.getElementById("chao");
+      c.textContent = "Chào " + d.ten + ". Kết quả các bài nghe của bạn được ghi vào hồ sơ học tập.";
+      c.hidden = false;
+    }).catch(function () {});
+  hoiHoSo.then(function () { return fetch("bai/danh-sach.json", { cache: "no-cache" }); })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (cac) {
       ds.textContent = "";
@@ -49,11 +68,12 @@
         trai.appendChild(tao("strong", b.tieuDe));
         trai.appendChild(tao("small", [b.bac, b.giong ? "Giọng " + b.giong : "", b.thoiLuong].filter(Boolean).join(", ")));
         a.appendChild(trai);
-        a.appendChild(tao("span", "Nghe →", "di"));
+        var lam = daLam[b.ma];
+        a.appendChild(tao("span", lam ? "Đã làm " + lam.lan + " lần, cao nhất " + lam.diemCao + "/" + lam.toiDa + " →" : "Nghe →", "di"));
         ds.appendChild(a);
       });
     })
-    .catch(function () { ds.textContent = "Chưa mở được danh sách bài. Con báo cô giúp nhé."; });
+    .catch(function () { ds.textContent = "Chưa mở được danh sách bài. Bạn báo cô giúp nhé."; });
 })();
 </script>
 </body>

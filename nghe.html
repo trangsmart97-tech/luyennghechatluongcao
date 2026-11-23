@@ -78,7 +78,7 @@
 
   <section id="khung-nghe" hidden>
     <h2>Nghe</h2>
-    <p class="ghichu">Con nghe 2 lần ở tốc độ thường, giống như trong phòng thi. Nghe đủ 2 lần rồi con mới đổi được tốc độ.</p>
+    <p class="ghichu">Bạn nghe 2 lần ở tốc độ thường, giống như trong phòng thi. Nghe đủ 2 lần rồi bạn mới đổi được tốc độ.</p>
     <div id="may-phat"></div>
     <div class="tocdo" role="group" aria-label="Tốc độ nghe">
       <span>Tốc độ:</span>
@@ -92,7 +92,7 @@
   <form id="bai-lam" hidden novalidate>
     <section>
       <h2>Phần 1. Điền vào chỗ trống</h2>
-      <p class="ghichu">Write NO MORE THAN four words in each blank. Mỗi chỗ trống con viết không quá 4 từ.</p>
+      <p class="ghichu">Write NO MORE THAN four words in each blank. Mỗi chỗ trống bạn viết không quá 4 từ.</p>
       <div class="vidu" id="vidu" hidden></div>
       <ol class="cau" id="dien-tu"></ol>
     </section>
@@ -101,27 +101,27 @@
       <ol class="cau" id="trac-nghiem"></ol>
     </section>
     <section>
-      <p class="diem" id="diem" hidden></p>
       <button class="nut" type="submit" id="nop">Nộp bài</button>
       <p class="ghichu" id="nhac-nop" style="margin:10px 0 0"></p>
     </section>
   </form>
 
   <section id="nhan-xet" class="nx" hidden>
-    <h2>Nhận xét cho con</h2>
+    <h2>Nhận xét cho bạn</h2>
     <p class="diem" id="diem-nx"></p>
-    <h3 class="tot">Điểm tốt của con</h3>
+    <p class="ghichu" id="ho-so" aria-live="polite"></p>
+    <h3 class="tot">Điểm tốt của bạn</h3>
     <ul id="nx-tot"></ul>
-    <h3 class="sua" id="nx-sua-td">Chỗ con cần sửa</h3>
+    <h3 class="sua" id="nx-sua-td">Chỗ bạn cần sửa</h3>
     <ul id="nx-sua"></ul>
-    <h3 class="tiep">Việc con làm tiếp</h3>
+    <h3 class="tiep">Việc bạn làm tiếp</h3>
     <ul id="nx-tiep"></ul>
     <button type="button" class="nut-phu" id="lam-lai">Làm lại bài</button>
   </section>
 
   <section id="khung-chep" hidden>
     <h2>Phần 3. Bản chép lời</h2>
-    <p class="ghichu">Con nghe lại và nhìn theo từng câu. Lúc này con đổi tốc độ được rồi.</p>
+    <p class="ghichu">Bạn nghe lại và nhìn theo từng câu. Lúc này bạn đổi tốc độ được rồi.</p>
     <div class="chep" id="chep"></div>
     <table id="cum-tu"></table>
   </section>
@@ -129,6 +129,7 @@
 
 <footer id="nguon"></footer>
 
+<script src="cau-hinh.js"></script>
 <script>
 (function () {
   "use strict";
@@ -156,12 +157,12 @@
   function capNhatDem() {
     var o = $("dem");
     if (moKhoa) {
-      o.textContent = "Con đã nghe đủ " + SO_LAN_NGHE + " lần. Bây giờ con chọn tốc độ được rồi.";
+      o.textContent = "Bạn đã nghe đủ " + SO_LAN_NGHE + " lần. Bây giờ bạn chọn tốc độ được rồi.";
     } else {
-      o.textContent = "Con đã nghe " + soLanNghe + " trên " + SO_LAN_NGHE + " lần.";
+      o.textContent = "Bạn đã nghe " + soLanNghe + " trên " + SO_LAN_NGHE + " lần.";
     }
     $("nhac-nop").textContent = (moKhoa || daNop) ? "" :
-      "Con nghe đủ " + SO_LAN_NGHE + " lần rồi mới nộp bài được nhé.";
+      "Bạn nghe đủ " + SO_LAN_NGHE + " lần rồi mới nộp bài được nhé.";
     $("nop").disabled = daNop || !moKhoa;
   }
   function moKhoaTocDo() {
@@ -192,7 +193,7 @@
       if (!moKhoa && mayPhat.playbackRate !== 1) mayPhat.playbackRate = 1;
     });
     mayPhat.addEventListener("error", function () {
-      baoLoi("Chưa mở được bản ghi của bài này. Con báo cô giúp nhé. Trong lúc chờ, con vẫn xem được câu hỏi.");
+      baoLoi("Chưa mở được bản ghi của bài này. Bạn báo cô giúp nhé. Trong lúc chờ, bạn vẫn xem được câu hỏi.");
       moKhoaTocDo();
     });
     $("may-phat").appendChild(mayPhat);
@@ -273,17 +274,17 @@
   function boMaoTu(ds) { return ds.filter(function (w) { return !MAO_TU[w]; }); }
   function chanDoan(tra, dapAn) {
     var t = chuan(tra);
-    if (!t) return { loai: "bo-trong", loi: "Con chưa điền chỗ này." };
+    if (!t) return { loai: "bo-trong", loi: "Bạn chưa điền chỗ này." };
     var gan = dapAn[0], kc = Infinity;
     dapAn.forEach(function (d) { var k = khoangCach(t, chuan(d)); if (k < kc) { kc = k; gan = d; } });
     var d = chuan(gan), tu = t.split(" "), tuDa = d.split(" ");
     if (tu.length > 4) {
       return { loai: "qua-dai", gan: gan, loi: t.indexOf(d) !== -1
-        ? "Trong câu trả lời của con có cụm đúng, nhưng con viết quá 4 từ."
-        : "Con viết quá 4 từ. Mỗi chỗ trống chỉ nhận không quá 4 từ." };
+        ? "Trong câu trả lời của bạn có cụm đúng, nhưng bạn viết quá 4 từ."
+        : "Bạn viết quá 4 từ. Mỗi chỗ trống chỉ nhận không quá 4 từ." };
     }
     if (boMaoTu(tu).join(" ") === boMaoTu(tuDa).join(" ")) {
-      return { loai: "mao-tu", gan: gan, loi: "Con nghe đúng ý, nhưng thiếu hoặc thừa một từ nhỏ như “a”, “an”, “the”." };
+      return { loai: "mao-tu", gan: gan, loi: "Bạn nghe đúng ý, nhưng thiếu hoặc thừa một từ nhỏ như “a”, “an”, “the”." };
     }
     if (tu.length === tuDa.length) {
       var lech = [];
@@ -293,22 +294,22 @@
         return false;
       });
       if (cungGoc && lech.length) {
-        return { loai: "am-cuoi", gan: gan, loi: "Con nghe đúng từ, nhưng chưa bắt được âm cuối của từ “" +
+        return { loai: "am-cuoi", gan: gan, loi: "Bạn nghe đúng từ, nhưng chưa bắt được âm cuối của từ “" +
           lech.join("”, “") + "”. Âm cuối thường được nói rất nhẹ." };
       }
     }
     var thieu = tuDa.filter(function (w) { return tu.indexOf(w) === -1; });
     var thua = tu.filter(function (w) { return tuDa.indexOf(w) === -1; });
     if (!thua.length && thieu.length) {
-      return { loai: "thieu-tu", gan: gan, loi: "Con nghe được một phần của cụm từ. Con còn thiếu: “" + thieu.join(" ") + "”." };
+      return { loai: "thieu-tu", gan: gan, loi: "Bạn nghe được một phần của cụm từ. Bạn còn thiếu: “" + thieu.join(" ") + "”." };
     }
     if (!thieu.length && thua.length) {
-      return { loai: "thua-tu", gan: gan, loi: "Con nghe đúng, nhưng viết thừa: “" + thua.join(" ") + "”." };
+      return { loai: "thua-tu", gan: gan, loi: "Bạn nghe đúng, nhưng viết thừa: “" + thua.join(" ") + "”." };
     }
     if (kc <= Math.max(1, Math.floor(d.length * 0.2))) {
-      return { loai: "chinh-ta", gan: gan, loi: "Con nghe đúng, nhưng viết chưa đúng chính tả." };
+      return { loai: "chinh-ta", gan: gan, loi: "Bạn nghe đúng, nhưng viết chưa đúng chính tả." };
     }
-    return { loai: "nghe-khac", gan: gan, loi: "Con nghe thành một cụm từ khác." };
+    return { loai: "nghe-khac", gan: gan, loi: "Bạn nghe thành một cụm từ khác." };
   }
 
   // Nút nghe lại đúng đoạn có đáp án. Dữ liệu: "doan": [giây bắt đầu, giây kết thúc].
@@ -330,113 +331,164 @@
   }
 
   function themDong(id, chu) { $(id).appendChild(tao("li", chu)); }
-  function vietNhanXet(kq) {
-    var tong = kq.tongDT + kq.tongTN, diem = kq.dungDT + kq.dungTN;
+  function vietNhanXet(kq, diem, tong) {
     var tyLe = tong ? diem / tong : 0, dem = kq.loai;
-    $("diem-nx").textContent = "Con làm đúng " + diem + " trên " + tong + " câu.";
+    $("diem-nx").textContent = "Bạn làm đúng " + diem + " trên " + tong + " câu.";
 
     // Điểm tốt: chỉ nói điều có thật trong bài làm.
-    if (kq.tongDT && kq.dungDT === kq.tongDT) themDong("nx-tot", "Con điền đúng cả " + kq.tongDT + " chỗ trống. Con nghe và viết cụm từ rất chắc.");
-    else if (kq.dungDT) themDong("nx-tot", "Con điền đúng " + kq.dungDT + " trên " + kq.tongDT + " chỗ trống.");
-    if (kq.tongTN && kq.dungTN === kq.tongTN) themDong("nx-tot", "Con chọn đúng cả " + kq.tongTN + " câu trắc nghiệm. Con hiểu rõ nội dung bài nghe.");
-    else if (kq.dungTN) themDong("nx-tot", "Con chọn đúng " + kq.dungTN + " trên " + kq.tongTN + " câu trắc nghiệm.");
-    if (kq.kyNangTot.length) themDong("nx-tot", "Kỹ năng con làm tốt: " + kq.kyNangTot.join(", ") + ".");
+    if (kq.tongDT && kq.dungDT === kq.tongDT) themDong("nx-tot", "Bạn điền đúng cả " + kq.tongDT + " chỗ trống. Bạn nghe và viết cụm từ rất chắc.");
+    else if (kq.dungDT) themDong("nx-tot", "Bạn điền đúng " + kq.dungDT + " trên " + kq.tongDT + " chỗ trống.");
+    if (kq.tongTN && kq.dungTN === kq.tongTN) themDong("nx-tot", "Bạn chọn đúng cả " + kq.tongTN + " câu trắc nghiệm. Bạn hiểu rõ nội dung bài nghe.");
+    else if (kq.dungTN) themDong("nx-tot", "Bạn chọn đúng " + kq.dungTN + " trên " + kq.tongTN + " câu trắc nghiệm.");
+    if (kq.kyNangTot.length) themDong("nx-tot", "Kỹ năng bạn làm tốt: " + kq.kyNangTot.join(", ") + ".");
     var ganDung = (dem["mao-tu"] || 0) + (dem["am-cuoi"] || 0) + (dem["chinh-ta"] || 0) + (dem["thua-tu"] || 0);
-    if (ganDung) themDong("nx-tot", "Ở " + ganDung + " chỗ trống, con đã nghe ra đúng từ. Con chỉ còn sai ở cách viết.");
-    themDong("nx-tot", "Con đã nghe đủ " + SO_LAN_NGHE + " lần và làm đến hết bài. Đó là cách luyện đúng.");
+    if (ganDung) themDong("nx-tot", "Ở " + ganDung + " chỗ trống, bạn đã nghe ra đúng từ. Bạn chỉ còn sai ở cách viết.");
+    themDong("nx-tot", "Bạn đã nghe đủ " + SO_LAN_NGHE + " lần và làm đến hết bài. Đó là cách luyện đúng.");
 
     // Chỗ cần sửa: gom theo loại lỗi.
     var sua = [];
-    if (dem["am-cuoi"]) sua.push("Âm cuối của từ, như “s”, “es”, “ed”: con sai " + dem["am-cuoi"] + " chỗ. Khi nghe lại, con để ý tiếng gió nhẹ ở cuối từ.");
-    if (dem["mao-tu"]) sua.push("Từ nhỏ “a”, “an”, “the”: con sai " + dem["mao-tu"] + " chỗ. Các từ này nói rất nhanh và nhẹ. Con đọc lại cả câu để xem câu cần từ nào.");
-    if (dem["chinh-ta"]) sua.push("Chính tả: con sai " + dem["chinh-ta"] + " chỗ. Con chép cụm từ đúng vào sổ lỗi và viết lại ba lần.");
-    if (dem["thieu-tu"]) sua.push("Nghe chưa trọn cụm từ: " + dem["thieu-tu"] + " chỗ. Trước khi nghe, con đọc câu hỏi và đoán chỗ trống cần mấy từ.");
-    if (dem["thua-tu"]) sua.push("Viết thừa từ: " + dem["thua-tu"] + " chỗ. Con chỉ viết đúng phần còn thiếu của câu.");
+    if (dem["am-cuoi"]) sua.push("Âm cuối của từ, như “s”, “es”, “ed”: bạn sai " + dem["am-cuoi"] + " chỗ. Khi nghe lại, bạn để ý tiếng gió nhẹ ở cuối từ.");
+    if (dem["mao-tu"]) sua.push("Từ nhỏ “a”, “an”, “the”: bạn sai " + dem["mao-tu"] + " chỗ. Các từ này nói rất nhanh và nhẹ. Bạn đọc lại cả câu để xem câu cần từ nào.");
+    if (dem["chinh-ta"]) sua.push("Chính tả: bạn sai " + dem["chinh-ta"] + " chỗ. Bạn chép cụm từ đúng vào sổ lỗi và viết lại ba lần.");
+    if (dem["thieu-tu"]) sua.push("Nghe chưa trọn cụm từ: " + dem["thieu-tu"] + " chỗ. Trước khi nghe, bạn đọc câu hỏi và đoán chỗ trống cần mấy từ.");
+    if (dem["thua-tu"]) sua.push("Viết thừa từ: " + dem["thua-tu"] + " chỗ. Bạn chỉ viết đúng phần còn thiếu của câu.");
     if (dem["qua-dai"]) sua.push("Viết quá 4 từ: " + dem["qua-dai"] + " chỗ. Trong đề thi, câu trả lời quá 4 từ không được điểm.");
-    if (dem["nghe-khac"]) sua.push("Nghe thành cụm từ khác: " + dem["nghe-khac"] + " chỗ. Con bấm “Nghe lại đoạn này” ở từng câu và nhìn theo bản chép lời.");
-    if (dem["bo-trong"]) sua.push("Bỏ trống: " + dem["bo-trong"] + " chỗ. Lần sau con cứ ghi điều mình nghe được, kể cả khi chưa chắc.");
-    if (kq.kyNangYeu.length) sua.push("Kỹ năng con cần luyện thêm: " + kq.kyNangYeu.join(", ") + ".");
-    if (kq.tongTN - kq.dungTN) sua.push("Trắc nghiệm: con sai " + (kq.tongTN - kq.dungTN) + " câu. Con đọc lời giải thích dưới từng câu để biết câu nào trong bài nghe cho đáp án.");
+    if (dem["nghe-khac"]) sua.push("Nghe thành cụm từ khác: " + dem["nghe-khac"] + " chỗ. Bạn bấm “Nghe lại đoạn này” ở từng câu và nhìn theo bản chép lời.");
+    if (dem["bo-trong"]) sua.push("Bỏ trống: " + dem["bo-trong"] + " chỗ. Lần sau bạn cứ ghi điều mình nghe được, kể cả khi chưa chắc.");
+    if (kq.kyNangYeu.length) sua.push("Kỹ năng bạn cần luyện thêm: " + kq.kyNangYeu.join(", ") + ".");
+    if (kq.tongTN - kq.dungTN) sua.push("Trắc nghiệm: bạn sai " + (kq.tongTN - kq.dungTN) + " câu. Bạn đọc lời giải thích dưới từng câu để biết câu nào trong bài nghe cho đáp án.");
     if (!sua.length) { $("nx-sua-td").hidden = true; $("nx-sua").hidden = true; }
     sua.forEach(function (c) { themDong("nx-sua", c); });
 
     // Việc làm tiếp theo mức điểm.
     if (tyLe >= 0.9) {
-      themDong("nx-tiep", "Con nghe lại một lần ở tốc độ 1,25 để tai quen với giọng nói nhanh hơn.");
-      themDong("nx-tiep", "Con chọn ba cụm từ trong bảng bên dưới và đặt một câu với mỗi cụm.");
+      themDong("nx-tiep", "Bạn nghe lại một lần ở tốc độ 1,25 để tai quen với giọng nói nhanh hơn.");
+      themDong("nx-tiep", "Bạn chọn ba cụm từ trong bảng bên dưới và đặt một câu với mỗi cụm.");
     } else if (tyLe >= 0.6) {
-      themDong("nx-tiep", "Con mở bản chép lời bên dưới, nghe lại và nhìn theo từng câu.");
-      themDong("nx-tiep", "Con chép các cụm từ mình sai vào sổ lỗi, rồi đọc to theo người nói.");
-      themDong("nx-tiep", "Ngày mai con bấm “Làm lại bài” để kiểm tra xem mình đã nhớ chưa.");
+      themDong("nx-tiep", "Bạn mở bản chép lời bên dưới, nghe lại và nhìn theo từng câu.");
+      themDong("nx-tiep", "Bạn chép các cụm từ mình sai vào sổ lỗi, rồi đọc to theo người nói.");
+      themDong("nx-tiep", "Ngày mai bạn bấm “Làm lại bài” để kiểm tra xem mình đã nhớ chưa.");
     } else {
-      themDong("nx-tiep", "Bài này còn khó với con, và điều đó là bình thường khi luyện tiếng Anh thật.");
-      themDong("nx-tiep", "Con nghe lại ở tốc độ 0,75 và nhìn theo bản chép lời bên dưới.");
-      themDong("nx-tiep", "Con chép các cụm từ mình sai vào sổ lỗi, đọc to theo người nói, rồi bấm “Làm lại bài”.");
+      themDong("nx-tiep", "Bài này còn khó với bạn, và điều đó là bình thường khi luyện tiếng Anh thật.");
+      themDong("nx-tiep", "Bạn nghe lại ở tốc độ 0,75 và nhìn theo bản chép lời bên dưới.");
+      themDong("nx-tiep", "Bạn chép các cụm từ mình sai vào sổ lỗi, đọc to theo người nói, rồi bấm “Làm lại bài”.");
     }
-    themDong("nx-tiep", "Con ghi điểm của bài này vào phiếu tự theo dõi.");
+    themDong("nx-tiep", "Bạn ghi điểm của bài này vào phiếu tự theo dõi.");
     $("lam-lai").addEventListener("click", function () { location.reload(); });
     $("nhan-xet").hidden = false;
   }
+  // ----- Mã riêng của học sinh: cô gửi đường dẫn có ?ma=…; trang nhớ mã trên máy này -----
+  var KHOA_MA = "luyennghe-ma";
+  function layMa() {
+    var m = new URLSearchParams(location.search).get("ma") || "";
+    try {
+      if (/^[0-9a-z]{24,64}$/.test(m)) localStorage.setItem(KHOA_MA, m);
+      else m = localStorage.getItem(KHOA_MA) || "";
+    } catch (e) { /* trình duyệt chặn lưu: vẫn dùng mã trên đường dẫn */ }
+    return /^[0-9a-z]{24,64}$/.test(m) ? m : "";
+  }
+  function goi(ham, thamSo) {
+    return fetch(CAU_HINH.supabase + "/rest/v1/rpc/" + ham, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", apikey: CAU_HINH.khoaCongKhai },
+      body: JSON.stringify(thamSo)
+    }).then(function (r) {
+      return r.json().catch(function () { return null; }).then(function (d) {
+        if (!r.ok) throw new Error(d && d.message ? d.message : "Chưa kết nối được. Bạn kiểm tra mạng rồi bấm “Nộp bài” lần nữa.");
+        return d;
+      });
+    });
+  }
+  // Bài mẫu (không có trên máy chủ) chấm ngay trên trang, trả về cùng dạng với máy chủ.
+  function chamTaiCho(traLoi) {
+    var ct = {};
+    (bai.dienTu || []).forEach(function (c, i) {
+      var tra = traLoi["dt" + (i + 1)], ds = [].concat(c.dapAn || []);
+      ct["dt" + (i + 1)] = { dung: demTu(tra) <= 4 && ds.some(function (d) { return chuan(d) === chuan(tra); }),
+        dapAn: ds[0], chapNhan: ds, giaiThich: c.giaiThich || "", meo: c.meo || "", doan: c.doan, kyNangNghe: c.kyNang || "" };
+    });
+    (bai.tracNghiem || []).forEach(function (c, i) {
+      ct["tn" + (i + 1)] = { dung: String(traLoi["tn" + (i + 1)]) === String(c.dung), dapAn: c.dung,
+        giaiThich: c.giaiThich || "", meo: c.meo || "", doan: c.doan, kyNangNghe: c.kyNang || "" };
+    });
+    return { chiTiet: ct, banChepLoi: bai.banChepLoi || "", vaoHoSo: false, baiMau: true };
+  }
+
   function nopBai(e) {
     e.preventDefault();
     if (daNop || !moKhoa) return;
     daNop = true;
-    var diem = 0, tong = 0;
-    var mauDT = $("dien-tu").children, mauTN = $("trac-nghiem").children;
+    $("nop").disabled = true; $("nop").textContent = "Đang chấm bài…";
+    var mauDT = $("dien-tu").children, mauTN = $("trac-nghiem").children, traLoi = {};
+    (bai.dienTu || []).forEach(function (c, i) { traLoi["dt" + (i + 1)] = mauDT[i].querySelector("input").value; });
+    (bai.tracNghiem || []).forEach(function (c, i) {
+      var chon = mauTN[i].querySelector("input:checked"); if (chon) traLoi["tn" + (i + 1)] = chon.value;
+    });
+    var ma = layMa();
+    var hoi = bai.laBaiMau ? Promise.resolve(chamTaiCho(traLoi))
+      : ma ? goi("ln_nop", { p_ma: ma, p_bai: bai.ma, p_tra_loi: traLoi, p_lan_nghe: soLanNghe })
+           : goi("ln_cham", { p_bai: bai.ma, p_tra_loi: traLoi });
+    hoi.then(function (kqMay) { hienChamBai(kqMay, traLoi); })
+      .catch(function (loi) {
+        daNop = false; $("nop").textContent = "Nộp bài"; capNhatDem();
+        baoLoi(loi.message);
+      });
+  }
 
+  function hienChamBai(kqMay, traLoi) {
+    $("loi").hidden = true;
+    var diem = 0, tong = 0, ct = kqMay.chiTiet || {};
+    var mauDT = $("dien-tu").children, mauTN = $("trac-nghiem").children;
     var kq = { tongDT: 0, dungDT: 0, tongTN: 0, dungTN: 0, loai: {}, kyNangTot: [], kyNangYeu: [] };
     function ghiKyNang(c, dung) {
-      if (!c.kyNang) return;
+      if (!c.kyNangNghe) return;
       var ds = dung ? kq.kyNangTot : kq.kyNangYeu;
-      if (ds.indexOf(c.kyNang) === -1) ds.push(c.kyNang);
+      if (ds.indexOf(c.kyNangNghe) === -1) ds.push(c.kyNangNghe);
     }
-    (bai.dienTu || []).forEach(function (c, i) {
+    (bai.dienTu || []).forEach(function (_, i) {
+      var c = ct["dt" + (i + 1)] || {}, tra = traLoi["dt" + (i + 1)] || "";
+      var dapAn = [].concat(c.chapNhan || c.dapAn || []);
       tong += 1; kq.tongDT += 1;
-      var o = mauDT[i].querySelector("input");
-      var tra = o.value, dapAn = [].concat(c.dapAn || []);
-      var quaDai = demTu(tra) > 4;
-      var dung = !quaDai && dapAn.some(function (d) { return chuan(d) === chuan(tra); });
-      o.readOnly = true;
-      ghiKyNang(c, dung);
-      if (dung) {
+      mauDT[i].querySelector("input").readOnly = true;
+      ghiKyNang(c, !!c.dung);
+      if (c.dung) {
         diem += 1; kq.dungDT += 1;
         hienKetQua(mauDT[i], true, "Đúng rồi.", c.giaiThich || "");
       } else {
-        var cd = chanDoan(tra, dapAn);
+        var cd = chanDoan(tra, dapAn.length ? dapAn : [""]);
         kq.loai[cd.loai] = (kq.loai[cd.loai] || 0) + 1;
         var khung = hienKetQua(mauDT[i], false, cd.loi,
-          "Đáp án: " + dapAn[0] + ". " + (c.giaiThich || "") + (c.meo ? " Mẹo: " + c.meo : ""));
+          "Đáp án: " + (dapAn[0] || "") + ". " + (c.giaiThich || "") + (c.meo ? " Mẹo: " + c.meo : ""));
         if (c.doan && c.doan.length === 2) { khung.appendChild(tao("br")); khung.appendChild(nutNgheLai(c.doan)); }
       }
     });
-    (bai.tracNghiem || []).forEach(function (c, i) {
+    (bai.tracNghiem || []).forEach(function (_, i) {
+      var c = ct["tn" + (i + 1)] || {}, chon = traLoi["tn" + (i + 1)] !== undefined;
       tong += 1; kq.tongTN += 1;
-      var chon = mauTN[i].querySelector("input:checked");
-      var dung = !!chon && parseInt(chon.value, 10) === c.dung;
-      if (dung) { diem += 1; kq.dungTN += 1; }
-      ghiKyNang(c, dung);
+      if (c.dung) { diem += 1; kq.dungTN += 1; }
+      ghiKyNang(c, !!c.dung);
       mauTN[i].querySelectorAll("input").forEach(function (o) { o.disabled = true; });
-      var dau = dung ? "Đúng rồi." : (chon ? "Chưa đúng." : "Con chưa chọn câu này.");
-      var khung = hienKetQua(mauTN[i], dung, dau, "Đáp án: " + String.fromCharCode(65 + c.dung) + ". " + (c.giaiThich || ""));
-      if (!dung && c.doan && c.doan.length === 2) { khung.appendChild(tao("br")); khung.appendChild(nutNgheLai(c.doan)); }
+      var dau = c.dung ? "Đúng rồi." : (chon ? "Chưa đúng." : "Bạn chưa chọn câu này.");
+      var khung = hienKetQua(mauTN[i], !!c.dung, dau,
+        "Đáp án: " + String.fromCharCode(65 + Number(c.dapAn)) + ". " + (c.giaiThich || ""));
+      if (!c.dung && c.doan && c.doan.length === 2) { khung.appendChild(tao("br")); khung.appendChild(nutNgheLai(c.doan)); }
     });
     kq.kyNangTot = kq.kyNangTot.filter(function (k) { return kq.kyNangYeu.indexOf(k) === -1; });
 
-    var d = $("diem");
-    d.textContent = "Con làm đúng " + diem + " trên " + tong + " câu.";
-    d.hidden = false;
-    $("nop").textContent = "Con đã nộp bài";
+    $("nop").textContent = "Bạn đã nộp bài";
     capNhatDem();
-
-    $("chep").textContent = bai.banChepLoi || "";
+    $("chep").textContent = kqMay.banChepLoi || "";
     var bang = $("cum-tu");
     (bai.cumTu || []).forEach(function (c) {
       var tr = tao("tr"); tr.appendChild(tao("td", c.cum)); tr.appendChild(tao("td", c.nghia));
       bang.appendChild(tr);
     });
     $("khung-chep").hidden = false;
-    d.hidden = true;
-    vietNhanXet(kq);
+    $("ho-so").textContent = kqMay.vaoHoSo
+      ? "Kết quả lần " + kqMay.lan + " đã ghi vào hồ sơ học tập của " + kqMay.ten + "."
+      : kqMay.baiMau ? "Bài mẫu không ghi vào hồ sơ."
+      : "Kết quả này chưa ghi vào hồ sơ, vì trang chưa có đường dẫn riêng của bạn. Bạn mở đường dẫn riêng cô gửi cho gia đình rồi làm lại nhé.";
+    vietNhanXet(kq, diem, tong);
     $("nhan-xet").scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
@@ -465,15 +517,15 @@
   var ma = new URLSearchParams(location.search).get("bai") || "";
   if (!/^[a-z0-9-]+$/.test(ma)) {
     $("tieude").textContent = "Luyện nghe";
-    baoLoi("Đường dẫn chưa có mã bài. Con quay lại danh sách bài nghe để chọn bài nhé.");
+    baoLoi("Đường dẫn chưa có mã bài. Bạn quay lại danh sách bài nghe để chọn bài nhé.");
     return;
   }
   fetch("bai/" + ma + ".json", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (d) { bai = d; hienBai(); })
+    .then(function (d) { bai = d; bai.ma = bai.ma || ma; hienBai(); })
     .catch(function () {
       $("tieude").textContent = "Luyện nghe";
-      baoLoi("Chưa tìm thấy bài “" + ma + "”. Con báo cô giúp nhé.");
+      baoLoi("Chưa tìm thấy bài “" + ma + "”. Bạn báo cô giúp nhé.");
     });
 })();
 </script>
