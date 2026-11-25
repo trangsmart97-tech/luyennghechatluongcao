@@ -1,0 +1,105 @@
+{
+  "ma": "tuan-02-bai-2",
+  "tieuDe": "Learning America’s Sport",
+  "tuan": 2,
+  "bac": "Giữa B1",
+  "giong": "Mỹ",
+  "thoiLuong": "57 giây",
+  "media": "media/tuan-02-bai-2.mp3",
+  "nguon": {
+    "ten": "VOA Learning English, Let’s Learn English Lesson 33: Learning America’s Sport",
+    "duongDan": "https://learningenglish.voanews.com/a/lesson-33-learning-americas-sport/3555047.html",
+    "giayPhep": "Phạm vi công cộng: nội dung do VOA Learning English làm, được đăng lại khi ghi nguồn. Đoạn trích khoảng 1 phút. Truy cập ngày 25/11/2026."
+  },
+  "viDu": {
+    "cau": "Each team has ____ .",
+    "dapAn": "many players"
+  },
+  "dienTu": [
+    {
+      "cau": "Then, the runner runs ____ .",
+      "kyNang": "nghe nơi chốn"
+    },
+    {
+      "cau": "Each time a batter bats, the runners run ____ .",
+      "kyNang": "nghe cụm giới từ"
+    },
+    {
+      "cau": "Each time a runner runs across home plate, they ____ !",
+      "kyNang": "nghe cụm động từ"
+    },
+    {
+      "cau": "The team with ____ at the end wins the game.",
+      "kyNang": "nghe cụm danh từ"
+    }
+  ],
+  "tracNghiem": [
+    {
+      "cau": "What is the talk mainly about?",
+      "luaChon": [
+        "a famous baseball team",
+        "the basic rules of baseball",
+        "how to make a baseball bat"
+      ],
+      "kyNang": "hiểu ý chính"
+    },
+    {
+      "cau": "Besides a bat and a ball, what does Anna say you need?",
+      "luaChon": [
+        "a helmet",
+        "special shoes",
+        "a glove"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "What happens first in a game?",
+      "luaChon": [
+        "The batter bats the ball.",
+        "The runner runs to home plate.",
+        "The pitcher pitches the ball."
+      ],
+      "kyNang": "nghe trình tự"
+    },
+    {
+      "cau": "How many innings are there in a game?",
+      "luaChon": [
+        "nine",
+        "six",
+        "seven"
+      ],
+      "kyNang": "nghe số lượng"
+    },
+    {
+      "cau": "How does Anna sound when she explains the game?",
+      "luaChon": [
+        "calm and serious",
+        "excited and cheerful",
+        "tired and slow"
+      ],
+      "kyNang": "nghe thái độ"
+    }
+  ],
+  "cumTu": [
+    {
+      "cum": "a bat, a ball and a glove",
+      "nghia": "gậy, bóng và găng tay"
+    },
+    {
+      "cum": "pitch the ball",
+      "nghia": "ném bóng (cho người đánh)"
+    },
+    {
+      "cum": "score a run",
+      "nghia": "ghi một điểm"
+    },
+    {
+      "cum": "at the end of",
+      "nghia": "vào cuối"
+    },
+    {
+      "cum": "win the game",
+      "nghia": "thắng trận"
+    }
+  ]
+}

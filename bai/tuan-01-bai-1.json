@@ -1,0 +1,105 @@
+{
+  "ma": "tuan-01-bai-1",
+  "tieuDe": "A Day at Georgetown",
+  "tuan": 1,
+  "bac": "Giữa B1",
+  "giong": "Mỹ",
+  "thoiLuong": "1 phút 9 giây",
+  "media": "media/tuan-01-bai-1.mp3",
+  "nguon": {
+    "ten": "VOA Learning English, Let’s Learn English Lesson 50: Back to School",
+    "duongDan": "https://learningenglish.voanews.com/a/lets-learn-english-lesson-50-back-to-school/3771173.html",
+    "giayPhep": "Phạm vi công cộng: nội dung do VOA Learning English làm, được đăng lại khi ghi nguồn. Đoạn trích khoảng 1 phút. Truy cập ngày 25/11/2026."
+  },
+  "viDu": {
+    "cau": "Georgetown University is in ____ .",
+    "dapAn": "Washington, D.C."
+  },
+  "dienTu": [
+    {
+      "cau": "Georgetown is the oldest Catholic and Jesuit university ____ .",
+      "kyNang": "nghe nơi chốn"
+    },
+    {
+      "cau": "The Jesuits are known worldwide for their ____ .",
+      "kyNang": "nghe cụm danh từ"
+    },
+    {
+      "cau": "Taylor has been writing and re-writing the report ____ .",
+      "kyNang": "nghe thời gian"
+    },
+    {
+      "cau": "Sarah has been studying this topic ____ .",
+      "kyNang": "nghe thời gian"
+    }
+  ],
+  "tracNghiem": [
+    {
+      "cau": "Why is Anna at Georgetown University?",
+      "luaChon": [
+        "She has decided to study again.",
+        "She has a job as a professor there.",
+        "She is showing the school to her friends."
+      ],
+      "kyNang": "hiểu ý chính"
+    },
+    {
+      "cau": "Is Anna late when she arrives?",
+      "luaChon": [
+        "No, she is early.",
+        "Yes, she is very late.",
+        "Yes, she is a little late."
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "Why does Sarah tell Anna not to worry?",
+      "luaChon": [
+        "The report is not due today.",
+        "The professor has not arrived yet.",
+        "Sarah has saved a seat for her."
+      ],
+      "kyNang": "suy ra lý do"
+    },
+    {
+      "cau": "What does Anna ask Taylor for?",
+      "luaChon": [
+        "a copy of the report",
+        "a pencil sharpener",
+        "a new pencil"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "How does Anna feel at the end?",
+      "luaChon": [
+        "upset that Taylor did not help her",
+        "worried that her report is not finished",
+        "glad that she found what she needed"
+      ],
+      "kyNang": "nghe thái độ"
+    }
+  ],
+  "cumTu": [
+    {
+      "cum": "go back to school",
+      "nghia": "đi học lại"
+    },
+    {
+      "cum": "since last night",
+      "nghia": "từ tối qua (đến giờ)"
+    },
+    {
+      "cum": "don’t worry",
+      "nghia": "đừng lo"
+    },
+    {
+      "cum": "pencil sharpener",
+      "nghia": "cái gọt bút chì"
+    },
+    {
+      "cum": "That was close.",
+      "nghia": "Suýt nữa thì rắc rối rồi."
+    }
+  ]
+}

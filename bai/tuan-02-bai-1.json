@@ -1,0 +1,105 @@
+{
+  "ma": "tuan-02-bai-1",
+  "tieuDe": "Google Science Fair",
+  "tuan": 2,
+  "bac": "Giữa B1",
+  "giong": "Mỹ",
+  "thoiLuong": "1 phút",
+  "media": "media/tuan-02-bai-1.mp3",
+  "nguon": {
+    "ten": "VOA Learning English, Science & Technology: Young People Solve the World’s Problems at Google Science Fair",
+    "duongDan": "https://learningenglish.voanews.com/a/young-people-solve-the-world-s-problems-at-google-science-fair/5024920.html",
+    "giayPhep": "Phạm vi công cộng: nội dung do VOA Learning English làm, được đăng lại khi ghi nguồn. Đoạn trích khoảng 1 phút. Truy cập ngày 25/11/2026."
+  },
+  "viDu": {
+    "cau": "The students are at a ____ .",
+    "dapAn": "science fair"
+  },
+  "dienTu": [
+    {
+      "cau": "The teenagers at the fair come ____ .",
+      "kyNang": "nghe số lượng"
+    },
+    {
+      "cau": "The second student wanted to help people with ____ or those recovering from an injury.",
+      "kyNang": "nghe cụm danh từ"
+    },
+    {
+      "cau": "His project uses sensors to measure ____ .",
+      "kyNang": "nghe cụm danh từ"
+    },
+    {
+      "cau": "The sensors turn the measurements ____ .",
+      "kyNang": "nghe cụm giới từ"
+    }
+  ],
+  "tracNghiem": [
+    {
+      "cau": "What did the students bring to the science fair?",
+      "luaChon": [
+        "questions about the world’s problems",
+        "new ideas for solving problems",
+        "stories about problems at home"
+      ],
+      "kyNang": "hiểu ý chính"
+    },
+    {
+      "cau": "Which kind of problem is NOT mentioned?",
+      "luaChon": [
+        "transportation",
+        "health",
+        "the environment"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "Where is the second student in the story from?",
+      "luaChon": [
+        "Indonesia",
+        "Russia",
+        "Saudi Arabia"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "What example does the speaker give of what the sensors measure?",
+      "luaChon": [
+        "dancing",
+        "running",
+        "sign language"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "What did the second student’s project win?",
+      "luaChon": [
+        "the LEGO Education Award",
+        "the Google Grand Prize",
+        "the Virgin Galactic Pioneer Award"
+      ],
+      "kyNang": "nghe chi tiết"
+    }
+  ],
+  "cumTu": [
+    {
+      "cum": "science fair",
+      "nghia": "hội chợ khoa học"
+    },
+    {
+      "cum": "solve a problem",
+      "nghia": "giải quyết một vấn đề"
+    },
+    {
+      "cum": "physical disability",
+      "nghia": "khuyết tật về thể chất"
+    },
+    {
+      "cum": "recover from an injury",
+      "nghia": "hồi phục sau chấn thương"
+    },
+    {
+      "cum": "sign language",
+      "nghia": "ngôn ngữ ký hiệu"
+    }
+  ]
+}

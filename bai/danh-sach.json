@@ -1,10 +1,34 @@
 [
   {
-    "ma": "bai-mau",
-    "tieuDe": "Bài mẫu để xem giao diện",
-    "tuan": 0,
+    "ma": "tuan-01-bai-1",
+    "tieuDe": "A Day at Georgetown",
+    "tuan": 1,
+    "bac": "Giữa B1",
+    "giong": "Mỹ",
+    "thoiLuong": "1 phút 9 giây"
+  },
+  {
+    "ma": "tuan-01-bai-2",
+    "tieuDe": "Fiona at the Zoo",
+    "tuan": 1,
+    "bac": "Giữa B1",
+    "giong": "Mỹ",
+    "thoiLuong": "1 phút 12 giây"
+  },
+  {
+    "ma": "tuan-02-bai-1",
+    "tieuDe": "Google Science Fair",
+    "tuan": 2,
     "bac": "Giữa B1",
     "giong": "Mỹ",
     "thoiLuong": "1 phút"
+  },
+  {
+    "ma": "tuan-02-bai-2",
+    "tieuDe": "Learning America’s Sport",
+    "tuan": 2,
+    "bac": "Giữa B1",
+    "giong": "Mỹ",
+    "thoiLuong": "57 giây"
   }
 ]

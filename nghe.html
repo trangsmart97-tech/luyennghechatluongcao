@@ -63,6 +63,9 @@
   .nut-phu { border: 2px solid var(--chinh); background: #fff; color: var(--chinh); border-radius: 10px;
     padding: 6px 12px; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; margin-top: 8px; }
   .ketqua b { display: block; margin-bottom: 2px; }
+  .loi-kien { display: flex; align-items: flex-end; gap: 10px; margin: 0 0 14px; }
+  .loi-kien img { width: 72px; height: auto; flex: none; }
+  .loi-kien p { position: relative; margin: 0 0 18px; background: #fff; border: 2px solid #463665; border-radius: 14px; padding: 8px 12px; font-size: 15px; }
   [hidden] { display: none !important; }
 </style>
 </head>
@@ -78,6 +81,7 @@
 
   <section id="khung-nghe" hidden>
     <h2>Nghe</h2>
+    <div class="loi-kien"><img src="hinh/kien-chao.png" alt="Bạn Kiên" width="72" height="53"><p>Bạn đọc lướt các câu hỏi ở dưới trước, rồi mới bấm nghe nhé. Tớ đoán trước mỗi chỗ trống cần loại từ gì!</p></div>
     <p class="ghichu">Bạn nghe 2 lần ở tốc độ thường, giống như trong phòng thi. Nghe đủ 2 lần rồi bạn mới đổi được tốc độ.</p>
     <div id="may-phat"></div>
     <div class="tocdo" role="group" aria-label="Tốc độ nghe">
@@ -484,6 +488,12 @@
       bang.appendChild(tr);
     });
     $("khung-chep").hidden = false;
+    if (bai.nguon && bai.nguon.ten) {
+      var f = $("nguon"); f.textContent = "Nguồn bản ghi: ";
+      if (bai.nguon.duongDan) { var a = tao("a", bai.nguon.ten); a.href = bai.nguon.duongDan; a.rel = "noopener"; a.target = "_blank"; f.appendChild(a); }
+      else f.appendChild(document.createTextNode(bai.nguon.ten));
+      if (bai.nguon.giayPhep) f.appendChild(document.createTextNode(". " + bai.nguon.giayPhep));
+    }
     $("ho-so").textContent = kqMay.vaoHoSo
       ? "Kết quả lần " + kqMay.lan + " đã ghi vào hồ sơ học tập của " + kqMay.ten + "."
       : kqMay.baiMau ? "Bài mẫu không ghi vào hồ sơ."
@@ -504,14 +514,8 @@
     $("bai-lam").hidden = false;
     $("bai-lam").addEventListener("submit", nopBai);
     capNhatDem();
-    if (bai.nguon && bai.nguon.ten) {
-      var f = $("nguon");
-      f.appendChild(document.createTextNode("Nguồn bản ghi: "));
-      if (bai.nguon.duongDan) {
-        var a = tao("a", bai.nguon.ten); a.href = bai.nguon.duongDan; a.rel = "noopener"; f.appendChild(a);
-      } else { f.appendChild(document.createTextNode(bai.nguon.ten)); }
-      if (bai.nguon.giayPhep) f.appendChild(document.createTextNode(". Giấy phép: " + bai.nguon.giayPhep + "."));
-    }
+    // Tên bài gốc có thể lộ đáp án, nên trước khi nộp chỉ ghi tên nguồn chung; nộp xong mới hiện tên bài và đường dẫn.
+    $("nguon").textContent = "Bản ghi: VOA Learning English (learningenglish.voanews.com), phạm vi công cộng.";
   }
 
   var ma = new URLSearchParams(location.search).get("bai") || "";

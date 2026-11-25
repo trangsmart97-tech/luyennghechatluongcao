@@ -1,0 +1,105 @@
+{
+  "ma": "tuan-01-bai-2",
+  "tieuDe": "Fiona at the Zoo",
+  "tuan": 1,
+  "bac": "Giữa B1",
+  "giong": "Mỹ",
+  "thoiLuong": "1 phút 12 giây",
+  "media": "media/tuan-01-bai-2.mp3",
+  "nguon": {
+    "ten": "VOA Learning English, What’s Trending Today: Fiona the Hippo Turns 3 Months Old",
+    "duongDan": "https://learningenglish.voanews.com/a/fiona-the-hippo-turns-three-months-old-trending-today-april-24/3823843.html",
+    "giayPhep": "Phạm vi công cộng: nội dung do VOA Learning English làm, được đăng lại khi ghi nguồn. Đoạn trích khoảng 1 phút. Truy cập ngày 25/11/2026."
+  },
+  "viDu": {
+    "cau": "The name of the baby animal is ____ .",
+    "dapAn": "Fiona"
+  },
+  "dienTu": [
+    {
+      "cau": "This spring, zoo officials have been celebrating the birth of a ____ .",
+      "kyNang": "nghe cụm danh từ"
+    },
+    {
+      "cau": "Fiona was born on January 24, ____ .",
+      "kyNang": "nghe thời gian"
+    },
+    {
+      "cau": "At birth, Fiona weighed ____ .",
+      "kyNang": "nghe số lượng"
+    },
+    {
+      "cau": "Now Fiona weighs ____ .",
+      "kyNang": "nghe số lượng"
+    }
+  ],
+  "tracNghiem": [
+    {
+      "cau": "What is the news story mainly about?",
+      "luaChon": [
+        "a baby animal that was moved to a new zoo",
+        "a baby animal that had a difficult start",
+        "a baby animal that visitors can now see every day"
+      ],
+      "kyNang": "hiểu ý chính"
+    },
+    {
+      "cau": "In the story, what does “premature” mean?",
+      "luaChon": [
+        "born before the expected time",
+        "born much bigger than normal",
+        "born in a very cold month"
+      ],
+      "kyNang": "đoán nghĩa từ"
+    },
+    {
+      "cau": "What did the animal experts fear?",
+      "luaChon": [
+        "Fiona would not eat.",
+        "Fiona would never grow big.",
+        "Fiona would not survive."
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "Who said, “She has brought everyone together”?",
+      "luaChon": [
+        "a zoo visitor who loves Fiona",
+        "a reporter who writes about the zoo",
+        "a person who takes care of African animals"
+      ],
+      "kyNang": "nghe chi tiết"
+    },
+    {
+      "cau": "How do people at the zoo feel about Fiona?",
+      "luaChon": [
+        "moved and happy",
+        "sad because Fiona is still sick",
+        "worried that Fiona is too small"
+      ],
+      "kyNang": "nghe thái độ"
+    }
+  ],
+  "cumTu": [
+    {
+      "cum": "birth and survival",
+      "nghia": "được sinh ra và sống sót"
+    },
+    {
+      "cum": "six weeks early",
+      "nghia": "sớm sáu tuần"
+    },
+    {
+      "cum": "health problems",
+      "nghia": "vấn đề sức khoẻ"
+    },
+    {
+      "cum": "take care of",
+      "nghia": "chăm sóc"
+    },
+    {
+      "cum": "turn three months old",
+      "nghia": "tròn ba tháng tuổi"
+    }
+  ]
+}

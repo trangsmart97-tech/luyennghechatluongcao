@@ -7,11 +7,13 @@ Trang nghe tiếng Anh tự luyện ở nhà cho lớp luyện thi lớp 6 Trầ
 
 | Tệp hoặc thư mục | Việc của nó |
 | --- | --- |
-| `index.html` | Danh sách bài nghe, xếp theo tuần |
+| `index.html` | Bản đồ hành trình 18 tuần (có Kiên), lịch nghe mỗi ngày, bài của từng tuần |
+| `bai/hanh-trinh.json` | Dữ liệu bản đồ: dựng bằng `cong-tramtuduy/cong-cu/luyen-nghe/tao_hanh_trinh.py` từ khung 18 tuần v2 |
+| `hinh/` | Hình Kiên (theo skill soạn tài liệu TĐN) |
 | `nghe.html` | Trang nghe dùng chung cho mọi bài |
 | `bai/danh-sach.json` | Danh sách các bài hiện trên trang chủ |
 | `bai/<mã bài>.json` | Nội dung của một bài: câu hỏi, đáp án, bản chép lời |
-| `media/` | Bản ghi mp4 hoặc mp3, mỗi tệp dưới 100 MB |
+| `media/` | Bản ghi mp3 khoảng 1 phút, 64 kbps một kênh (khoảng 0,5 MB), cắt từ VOA Learning English |
 | `qr/` | Mã QR của từng bài, in vào phiếu |
 | `cong-cu/tao_qr.py` | Lệnh tạo mã QR cho mọi bài trong danh sách |
 

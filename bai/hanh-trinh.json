@@ -1,0 +1,547 @@
+{
+ "nguon": "KHUNG CHƯƠNG TRÌNH 18 TUẦN v2 (QĐ-001), trang “Nghe và xã hội”, “Lịch nghe hằng ngày”",
+ "nghiTet": "01/02 đến 12/02/2027",
+ "tuan": [
+  {
+   "tuan": 1,
+   "tu": "14/12/2026",
+   "den": "20/12/2026",
+   "bac": "Giữa B1",
+   "tang": "Mốc gốc",
+   "doDai": "khoảng 1 phút",
+   "bai": [
+    {
+     "ma": "tuan-01-bai-1",
+     "chuDe": "Thông báo ở trường",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-01-bai-2",
+     "chuDe": "Sở thú và động vật",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH01",
+    "ten": "Biển báo quanh trường nói gì?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 2,
+   "tu": "21/12/2026",
+   "den": "27/12/2026",
+   "bac": "Giữa B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút",
+   "bai": [
+    {
+     "ma": "tuan-02-bai-1",
+     "chuDe": "Hội chợ khoa học",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-02-bai-2",
+     "chuDe": "Ngày hội thể thao",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH02",
+    "ten": "Ở nhà mình tiết kiệm điện thế nào?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 3,
+   "tu": "28/12/2026",
+   "den": "03/01/2027",
+   "bac": "Giữa B1",
+   "tang": "Tăng độ dài",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-03-bai-1",
+     "chuDe": "Bảo tàng",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-03-bai-2",
+     "chuDe": "Thiên nhiên",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH03",
+    "ten": "Dùng điện sao cho an toàn?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 4,
+   "tu": "04/01/2027",
+   "den": "10/01/2027",
+   "bac": "Giữa B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-04-bai-1",
+     "chuDe": "Thành phố và giao thông",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-04-bai-2",
+     "chuDe": "Thư viện và ngày hội sách",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH04",
+    "ten": "Ôn trộn xã hội tuần 1 đến tuần 3"
+   },
+   "moc": {
+    "ten": "Mốc 1",
+    "ngay": "09/01/2027"
+   },
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 5,
+   "tu": "11/01/2027",
+   "den": "17/01/2027",
+   "bac": "Giữa B1",
+   "tang": "Tăng mật độ thông tin",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-05-bai-1",
+     "chuDe": "Chuyến tham quan",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-05-bai-2",
+     "chuDe": "Thông báo ở trường",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH05",
+    "ten": "Mỗi giọt nước sạch đi đâu?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 6,
+   "tu": "18/01/2027",
+   "den": "24/01/2027",
+   "bac": "Giữa B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-06-bai-1",
+     "chuDe": "Sở thú và động vật",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-06-bai-2",
+     "chuDe": "Hội chợ khoa học",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH06",
+    "ten": "Rác này bỏ vào thùng nào?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 7,
+   "tu": "25/01/2027",
+   "den": "31/01/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Tăng tốc độ nói",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-07-bai-1",
+     "chuDe": "Ngày hội thể thao",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-07-bai-2",
+     "chuDe": "Bảo tàng",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH07",
+    "ten": "Ôn trộn xã hội tuần 5 và tuần 6"
+   },
+   "moc": {
+    "ten": "Mốc 2",
+    "ngay": "30/01/2027"
+   },
+   "nghiTetSau": true
+  },
+  {
+   "tuan": 8,
+   "tu": "15/02/2027",
+   "den": "21/02/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 15 giây",
+   "bai": [
+    {
+     "ma": "tuan-08-bai-1",
+     "chuDe": "Thiên nhiên",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-08-bai-2",
+     "chuDe": "Thành phố và giao thông",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH08",
+    "ten": "Vì sao phải bảo vệ động vật hoang dã?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 9,
+   "tu": "22/02/2027",
+   "den": "28/02/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Tăng độ dài",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-09-bai-1",
+     "chuDe": "Thư viện và ngày hội sách",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-09-bai-2",
+     "chuDe": "Chuyến tham quan",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH09",
+    "ten": "Lên mạng sao cho an toàn?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 10,
+   "tu": "01/03/2027",
+   "den": "07/03/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-10-bai-1",
+     "chuDe": "Thông báo ở trường",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-10-bai-2",
+     "chuDe": "Sở thú và động vật",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH10",
+    "ten": "Ăn gì cho an toàn, lành mạnh?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 11,
+   "tu": "08/03/2027",
+   "den": "14/03/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Tăng mật độ thông tin",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-11-bai-1",
+     "chuDe": "Hội chợ khoa học",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-11-bai-2",
+     "chuDe": "Ngày hội thể thao",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH11",
+    "ten": "Ôn trộn xã hội tuần 8 đến tuần 10"
+   },
+   "moc": {
+    "ten": "Mốc 3",
+    "ngay": "13/03/2027"
+   },
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 12,
+   "tu": "15/03/2027",
+   "den": "21/03/2027",
+   "bac": "Nửa trên B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-12-bai-1",
+     "chuDe": "Bảo tàng",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-12-bai-2",
+     "chuDe": "Thiên nhiên",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH12",
+    "ten": "Đi tàu điện, giữ nếp sống văn minh ở thành phố"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 13,
+   "tu": "22/03/2027",
+   "den": "28/03/2027",
+   "bac": "Cuối B1",
+   "tang": "Tăng tốc độ nói",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-13-bai-1",
+     "chuDe": "Thành phố và giao thông",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-13-bai-2",
+     "chuDe": "Thư viện và ngày hội sách",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH13",
+    "ten": "Gặp nước sâu, đám cháy, động đất thì làm gì?"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 14,
+   "tu": "29/03/2027",
+   "den": "04/04/2027",
+   "bac": "Cuối B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 1 phút 30 giây",
+   "bai": [
+    {
+     "ma": "tuan-14-bai-1",
+     "chuDe": "Chuyến tham quan",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-14-bai-2",
+     "chuDe": "Thông báo ở trường",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH14",
+    "ten": "Ứng xử nơi công cộng, giữ môi trường"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 15,
+   "tu": "05/04/2027",
+   "den": "11/04/2027",
+   "bac": "Cuối B1",
+   "tang": "Tăng độ dài",
+   "doDai": "khoảng 1 phút 45 giây",
+   "bai": [
+    {
+     "ma": "tuan-15-bai-1",
+     "chuDe": "Sở thú và động vật",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-15-bai-2",
+     "chuDe": "Hội chợ khoa học",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH15",
+    "ten": "Ôn trộn xã hội tuần 12 đến tuần 14"
+   },
+   "moc": {
+    "ten": "Mốc 4",
+    "ngay": "10/04/2027"
+   },
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 16,
+   "tu": "12/04/2027",
+   "den": "18/04/2027",
+   "bac": "Cuối B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 2 phút",
+   "bai": [
+    {
+     "ma": "tuan-16-bai-1",
+     "chuDe": "Ngày hội thể thao",
+     "giong": "Mỹ"
+    },
+    {
+     "ma": "tuan-16-bai-2",
+     "chuDe": "Bảo tàng",
+     "giong": "Anh"
+    }
+   ],
+   "xh": {
+    "ma": "XH16",
+    "ten": "Quyền của bạn và cách tự bảo vệ mình"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 17,
+   "tu": "19/04/2027",
+   "den": "25/04/2027",
+   "bac": "Cuối B1",
+   "tang": "Tăng mật độ thông tin",
+   "doDai": "khoảng 2 phút",
+   "bai": [
+    {
+     "ma": "tuan-17-bai-1",
+     "chuDe": "Thiên nhiên",
+     "giong": "Úc"
+    },
+    {
+     "ma": "tuan-17-bai-2",
+     "chuDe": "Thành phố và giao thông",
+     "giong": "Mỹ"
+    }
+   ],
+   "xh": {
+    "ma": "XH17",
+    "ten": "Hoà bình, hợp tác và lòng biết ơn"
+   },
+   "moc": null,
+   "nghiTetSau": false
+  },
+  {
+   "tuan": 18,
+   "tu": "26/04/2027",
+   "den": "02/05/2027",
+   "bac": "Cuối B1",
+   "tang": "Giữ nguyên",
+   "doDai": "khoảng 2 phút",
+   "bai": [
+    {
+     "ma": "tuan-18-bai-1",
+     "chuDe": "Thư viện và ngày hội sách",
+     "giong": "Anh"
+    },
+    {
+     "ma": "tuan-18-bai-2",
+     "chuDe": "Chuyến tham quan",
+     "giong": "Úc"
+    }
+   ],
+   "xh": {
+    "ma": "XH18",
+    "ten": "Ôn trộn xã hội cả khoá"
+   },
+   "moc": {
+    "ten": "Mốc 5",
+    "ngay": "01/05/2027"
+   },
+   "nghiTetSau": false
+  }
+ ],
+ "lichNgay": [
+  {
+   "thu": "Thứ Hai",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Bài nghe 1 của tuần trên trang nghe: nghe hai lần ở tốc độ 1, điền 4 chỗ trống, làm 5 câu trắc nghiệm, đọc mục “Nhận xét cho bạn”.",
+   "toi": "22:10 đến 22:30, sau giờ lớp",
+   "viecToi": "Nghe lại bài 1, tắt màn hình, chỉ nghe tiếng.",
+   "ghi": "Ghi điểm bài 1 vào phiếu tự theo dõi"
+  },
+  {
+   "thu": "Thứ Ba",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Bài 1 với bản chép lời: đánh dấu chỗ nối âm, nói đuổi theo từng câu, chép chính tả 5 câu.",
+   "toi": "20 phút trước khi ngủ",
+   "viecToi": "Nghe mở rộng một bài cùng chủ đề trên VOA Learning English, ghi 3 cụm từ.",
+   "ghi": "5 câu chính tả"
+  },
+  {
+   "thu": "Thứ Tư",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Nghe mở rộng bài thứ hai cùng chủ đề; nói thành tiếng 3 câu tóm tắt bằng tiếng Anh.",
+   "toi": "22:10 đến 22:30, sau giờ lớp",
+   "viecToi": "Nghe lại bài mở rộng, tắt màn hình.",
+   "ghi": "3 câu tóm tắt"
+  },
+  {
+   "thu": "Thứ Năm",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Bài nghe 2 của tuần trên trang nghe, cách làm như thứ Hai.",
+   "toi": "20 phút trước khi ngủ",
+   "viecToi": "Nghe lại bài 2, tắt màn hình.",
+   "ghi": "Ghi điểm bài 2"
+  },
+  {
+   "thu": "Thứ Sáu",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Bài 2 với bản chép lời: nối âm, nói đuổi, chép chính tả 5 câu.",
+   "toi": "20 phút trước khi ngủ",
+   "viecToi": "Nghe lại cả hai bài ở tốc độ 1,25.",
+   "ghi": "5 câu chính tả"
+  },
+  {
+   "thu": "Thứ Bảy",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Nghe mở rộng một bài có giọng khác với giọng của tuần; ghi 5 cụm từ đáng học.",
+   "toi": "20 phút trước khi ngủ",
+   "viecToi": "Nghe một truyện hoặc bài nói tiếng Anh bạn thích.",
+   "ghi": "5 cụm từ"
+  },
+  {
+   "thu": "Chủ nhật",
+   "sang": "5:15 đến 5:45",
+   "viecSang": "Tự kiểm tra: nghe lại hai bài, không nhìn chữ, điền lại 8 chỗ trống, so với lần đầu.",
+   "toi": "20 phút trước khi ngủ",
+   "viecToi": "Nghe trước một bài thuộc chủ đề của tuần sau.",
+   "ghi": "Ghi tiến bộ của tuần"
+  }
+ ]
+}

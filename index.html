@@ -4,76 +4,168 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Luyện nghe chất lượng cao – Trạm Tư Duy</title>
+<meta name="description" content="Hành trình 18 tuần luyện nghe tiếng Anh cho lớp luyện thi lớp 6 Trần Đại Nghĩa.">
 <style>
-  :root { --nen: #f6f4ee; --the: #fff; --chu: #1f2a37; --chu-nhat: #5b6676; --chinh: #0f6e6e; --chinh-nhat: #e2f1f0; --vien: #d9d4c7; }
+  :root { --nen: #f6f4ee; --the: #fff; --chu: #1f2a37; --chu-nhat: #5b6676; --chinh: #0f6e6e; --chinh-nhat: #e2f1f0;
+    --vien: #d9d4c7; --tim: #463665; --nau: #5F411E; --vang: #f2b632; --kem: #FFF9F0; }
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--nen); color: var(--chu);
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--nen); color: var(--chu); overflow-x: hidden;
     font-family: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif; font-size: 17px; line-height: 1.55; }
-  header { background: var(--chinh); color: #fff; padding: 26px 16px; }
-  header div, main { max-width: 760px; margin: 0 auto; }
-  h1 { margin: 0 0 6px; font-size: 27px; }
+  header { background: var(--chinh); color: #fff; padding: 22px 16px 26px; }
+  .khung { max-width: 860px; margin: 0 auto; padding: 0 16px; }
+  header .khung { padding: 0; }
+  h1 { margin: 0 0 4px; font-size: 26px; line-height: 1.25; }
   header p { margin: 0; color: #d6efee; }
-  main { padding: 16px; }
-  #chao { max-width: 760px; margin: 16px auto 0; padding: 0 16px; }
-  h2 { font-size: 18px; color: var(--chinh); margin: 22px 0 8px; }
-  a.bai { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--the);
-    border: 1px solid var(--vien); border-radius: 12px; padding: 12px 16px; margin-bottom: 8px; color: inherit; text-decoration: none; }
-  a.bai:hover, a.bai:focus { border-color: var(--chinh); background: var(--chinh-nhat); outline: none; }
-  a.bai strong { display: block; }
-  a.bai small { color: var(--chu-nhat); }
-  a.bai span.di { color: var(--chinh); font-weight: 700; white-space: nowrap; }
-  .trong { color: var(--chu-nhat); }
+  .loi-kien { display: flex; align-items: flex-end; gap: 10px; margin: 18px 0 6px; }
+  .loi-kien img { width: 96px; height: auto; flex: none; }
+  .bong { position: relative; background: #fff; border: 2px solid var(--tim); border-radius: 16px; padding: 10px 14px;
+    color: var(--chu); font-size: 16px; margin-bottom: 26px; }
+  .bong::before { content: ""; position: absolute; left: -10px; bottom: 14px; border: 8px solid transparent;
+    border-right-color: var(--tim); border-left: 0; }
+  h2 { font-size: 20px; color: var(--tim); margin: 26px 0 10px; }
+  .chu-giai { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 14px; color: var(--chu-nhat); margin-bottom: 12px; }
+  .chu-giai span::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; margin-right: 6px; vertical-align: -1px; }
+  .chu-giai .g-mo::before { background: var(--chinh); } .chu-giai .g-xong::before { background: var(--vang); }
+  .chu-giai .g-khoa::before { background: #cfc9bb; }
+
+  /* Bản đồ: một đường đi dọc, mỗi tuần một trạm */
+  ol.ban-do { list-style: none; margin: 0; padding: 0 0 0 30px; position: relative; }
+  ol.ban-do::before { content: ""; position: absolute; left: 13px; top: 8px; bottom: 8px; width: 4px; border-radius: 2px;
+    background: repeating-linear-gradient(to bottom, var(--vien) 0 10px, transparent 10px 16px); }
+  .tram { position: relative; background: var(--the); border: 1px solid var(--vien); border-radius: 14px; padding: 12px 14px; margin-bottom: 12px; }
+  .tram::before { content: attr(data-so); position: absolute; left: -32px; top: 12px; width: 26px; height: 26px; border-radius: 50%;
+    background: #cfc9bb; color: #fff; font-weight: 700; font-size: 13px; display: grid; place-items: center; }
+  .tram.mo::before { background: var(--chinh); } .tram.xong::before { background: var(--vang); color: var(--nau); content: "✓"; }
+  .tram.xong { border-color: var(--vang); box-shadow: 0 0 0 3px #fbe7b5; }
+  .tram.khoa { background: #f1eee6; color: var(--chu-nhat); }
+  .tram-dau { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; align-items: baseline; }
+  .tram-dau strong { font-size: 17px; color: var(--tim); }
+  .tram.khoa .tram-dau strong { color: var(--chu-nhat); }
+  .tram-dau small { color: var(--chu-nhat); font-size: 14px; }
+  .the-nho { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .the-nho span { background: var(--chinh-nhat); color: var(--chinh); border-radius: 999px; padding: 1px 10px; font-size: 13px; }
+  .tram.khoa .the-nho span { background: #e6e1d6; color: var(--chu-nhat); }
+  .bai { display: flex; justify-content: space-between; align-items: center; gap: 10px; border: 1px solid var(--vien);
+    border-radius: 10px; padding: 8px 12px; margin-top: 6px; color: inherit; text-decoration: none; background: #fff; min-width: 0; }
+  a.bai:hover, a.bai:focus-visible { border-color: var(--chinh); background: var(--chinh-nhat); outline: none; }
+  .bai .ten { min-width: 0; overflow-wrap: anywhere; }
+  .bai .ten b { display: block; font-size: 16px; }
+  .bai .ten small { color: var(--chu-nhat); font-size: 13px; }
+  .bai .di { color: var(--chinh); font-weight: 700; font-size: 14px; text-align: right; }
+  .bai.da-lam .di { color: var(--nau); }
+  .bai.chua { background: transparent; border-style: dashed; color: var(--chu-nhat); }
+  .bai.chua .di { white-space: nowrap; color: var(--chu-nhat); font-weight: 600; }
+  .mo-rong, .xh { font-size: 14px; margin-top: 8px; color: var(--chu-nhat); }
+  .xh b { color: var(--nau); }
+  .moc { margin: -4px 0 12px; font-size: 14px; font-weight: 700; color: var(--nau); }
+  .moc::before { content: "★ "; color: var(--vang); }
+  .tet { margin: 0 0 12px; font-size: 14px; color: var(--chu-nhat); font-style: italic; }
+  details { background: var(--the); border: 1px solid var(--vien); border-radius: 14px; padding: 12px 14px; margin-top: 8px; }
+  summary { cursor: pointer; font-weight: 700; color: var(--tim); }
+  .ngay { border-top: 1px solid var(--vien); padding: 10px 0 4px; font-size: 15px; }
+  .ngay:first-of-type { border-top: 0; }
+  .ngay b { color: var(--chinh); }
+  .ngay p { margin: 4px 0; }
+  .loi-tai { color: #b3401f; }
+  footer { color: var(--chu-nhat); font-size: 13px; padding: 24px 0 32px; }
 </style>
 </head>
 <body>
-<header><div>
+<header><div class="khung">
   <h1>Luyện nghe chất lượng cao</h1>
-  <p>Tiếng Anh thật, nghe như trong phòng thi. Bạn chọn bài của tuần này nhé.</p>
+  <p>Hành trình 18 tuần, mỗi tuần 2 bài nghe mới và 3 bài nghe mở rộng.</p>
 </div></header>
-<p class="trong" id="chao" hidden></p>
-<main id="ds"><p class="trong">Đang mở danh sách bài…</p></main>
+
+<main class="khung">
+  <div class="loi-kien">
+    <img src="hinh/kien-chao.png" alt="Bạn Kiên vẫy tay chào" width="96" height="71">
+    <div class="bong" id="chao">Chào bạn! Tớ là Kiên. Mỗi tuần mình cùng nghe 2 bài mới nhé. Bạn bấm vào bài của tuần đang mở để bắt đầu.</div>
+  </div>
+
+  <h2>Bản đồ hành trình</h2>
+  <div class="chu-giai"><span class="g-mo">Tuần đã mở</span><span class="g-xong">Tuần bạn đã làm xong</span><span class="g-khoa">Tuần chưa mở</span></div>
+  <ol class="ban-do" id="ban-do"><li>Đang mở bản đồ…</li></ol>
+
+  <h2>Lịch nghe mỗi ngày</h2>
+  <div class="loi-kien">
+    <img src="hinh/kien-chi.png" alt="Bạn Kiên chỉ vào lịch" width="64" height="96" style="width:64px">
+    <div class="bong">Mỗi ngày hai cữ: sáng nghe chủ động, tối nghe thả lỏng. Bạn mở lịch bên dưới để biết hôm nay làm gì nhé.</div>
+  </div>
+  <details><summary>Xem lịch nghe từ thứ Hai đến Chủ nhật</summary><div id="lich-ngay"></div></details>
+
+  <footer>Bản ghi lấy từ VOA Learning English (learningenglish.voanews.com), phạm vi công cộng. Lịch và chủ đề theo khung chương trình 18 tuần của lớp.</footer>
+</main>
+
 <script src="cau-hinh.js"></script>
 <script>
 (function () {
   "use strict";
-  var ds = document.getElementById("ds");
-  function tao(the, chu, lop) { var e = document.createElement(the); if (chu) e.textContent = chu; if (lop) e.className = lop; return e; }
+  var $ = function (id) { return document.getElementById(id); };
+  function tao(the, chu, lop) { var e = document.createElement(the); if (chu != null) e.textContent = chu; if (lop) e.className = lop; return e; }
+
   // Mã riêng (?ma=…) cô gửi cho gia đình: nhớ trên máy này để bài nghe ghi vào hồ sơ.
   var ma = new URLSearchParams(location.search).get("ma") || "";
   try { if (/^[0-9a-z]{24,64}$/.test(ma)) localStorage.setItem("luyennghe-ma", ma); else ma = localStorage.getItem("luyennghe-ma") || ""; } catch (e) {}
   if (!/^[0-9a-z]{24,64}$/.test(ma)) ma = "";
-  var daLam = {};
-  var hoiHoSo = !ma ? Promise.resolve() : fetch(CAU_HINH.supabase + "/rest/v1/rpc/ln_vao", {
+  var hoiHoSo = !ma ? Promise.resolve(null) : fetch(CAU_HINH.supabase + "/rest/v1/rpc/ln_vao", {
       method: "POST", headers: { "Content-Type": "application/json", apikey: CAU_HINH.khoaCongKhai },
       body: JSON.stringify({ p_ma: ma }) })
-    .then(function (r) { return r.ok ? r.json() : null; })
-    .then(function (d) {
-      if (!d) return;
-      daLam = d.daLam || {};
-      var c = document.getElementById("chao");
-      c.textContent = "Chào " + d.ten + ". Kết quả các bài nghe của bạn được ghi vào hồ sơ học tập.";
-      c.hidden = false;
-    }).catch(function () {});
-  hoiHoSo.then(function () { return fetch("bai/danh-sach.json", { cache: "no-cache" }); })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (cac) {
-      ds.textContent = "";
-      if (!cac.length) { ds.appendChild(tao("p", "Chưa có bài nghe nào.", "trong")); return; }
-      var tuanTruoc = null;
-      cac.forEach(function (b) {
-        if (b.tuan !== tuanTruoc) { ds.appendChild(tao("h2", "Tuần " + b.tuan)); tuanTruoc = b.tuan; }
-        var a = tao("a", null, "bai");
-        a.href = "nghe.html?bai=" + encodeURIComponent(b.ma);
-        var trai = tao("div");
-        trai.appendChild(tao("strong", b.tieuDe));
-        trai.appendChild(tao("small", [b.bac, b.giong ? "Giọng " + b.giong : "", b.thoiLuong].filter(Boolean).join(", ")));
-        a.appendChild(trai);
-        var lam = daLam[b.ma];
-        a.appendChild(tao("span", lam ? "Đã làm " + lam.lan + " lần, cao nhất " + lam.diemCao + "/" + lam.toiDa + " →" : "Nghe →", "di"));
-        ds.appendChild(a);
+    .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  var docJson = function (u) { return fetch(u, { cache: "no-cache" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
+
+  Promise.all([docJson("bai/hanh-trinh.json"), docJson("bai/danh-sach.json"), hoiHoSo])
+    .then(function (kq) {
+      var ht = kq[0], ds = {}, hs = kq[2], daLam = (hs && hs.daLam) || {};
+      kq[1].forEach(function (b) { ds[b.ma] = b; });
+      if (hs) $("chao").textContent = "Chào " + hs.ten + "! Tớ là Kiên. Kết quả các bài nghe của bạn được ghi vào hồ sơ học tập. Tuần nào bạn làm xong cả hai bài sẽ sáng lên trên bản đồ.";
+      var bd = $("ban-do"); bd.textContent = "";
+      ht.tuan.forEach(function (t) {
+        var coBai = t.bai.some(function (b) { return ds[b.ma]; });
+        var xong = t.bai.every(function (b) { return ds[b.ma] && daLam[b.ma]; });
+        var li = tao("li", null, "tram " + (xong ? "xong" : coBai ? "mo" : "khoa"));
+        li.dataset.so = t.tuan;
+        var dau = tao("div", null, "tram-dau");
+        dau.appendChild(tao("strong", "Tuần " + t.tuan));
+        dau.appendChild(tao("small", t.tu.slice(0, 5) + " đến " + t.den.slice(0, 5) + (coBai ? "" : ", chưa mở")));
+        li.appendChild(dau);
+        var nho = tao("div", null, "the-nho");
+        [t.bac, t.doDai, t.tang === "Mốc gốc" ? "Mốc xuất phát" : t.tang].forEach(function (x) { nho.appendChild(tao("span", x)); });
+        li.appendChild(nho);
+        t.bai.forEach(function (b, i) {
+          var co = ds[b.ma], lam = daLam[b.ma];
+          var o = tao(co ? "a" : "div", null, "bai" + (lam ? " da-lam" : "") + (co ? "" : " chua"));
+          if (co) o.href = "nghe.html?bai=" + encodeURIComponent(b.ma);
+          var ten = tao("div", null, "ten");
+          ten.appendChild(tao("b", "Bài " + (i + 1) + ". " + (co ? co.tieuDe : b.chuDe)));
+          ten.appendChild(tao("small", co ? b.chuDe + ", giọng " + co.giong + ", " + co.thoiLuong : "Giọng " + b.giong));
+          o.appendChild(ten);
+          o.appendChild(tao("span", co ? (lam ? "Đã làm " + lam.lan + " lần, cao nhất " + lam.diemCao + "/" + lam.toiDa : "Nghe →") : "Chưa mở", "di"));
+          li.appendChild(o);
+        });
+        var mr = tao("div", null, "mo-rong");
+        mr.appendChild(document.createTextNode("Thêm 3 bài nghe mở rộng cùng chủ đề trên "));
+        var a = tao("a", "VOA Learning English"); a.href = "https://learningenglish.voanews.com/"; a.target = "_blank"; a.rel = "noopener";
+        mr.appendChild(a); mr.appendChild(document.createTextNode(" vào thứ Ba, thứ Tư, thứ Bảy."));
+        li.appendChild(mr);
+        var xh = tao("div", null, "xh");
+        xh.appendChild(tao("b", "Kiến thức xã hội " + t.xh.ma + ": ")); xh.appendChild(document.createTextNode(t.xh.ten));
+        li.appendChild(xh);
+        bd.appendChild(li);
+        if (t.moc) bd.appendChild(tao("li", t.moc.ten + " ngày " + t.moc.ngay, "moc"));
+        if (t.nghiTetSau) bd.appendChild(tao("li", "Nghỉ Tết từ " + ht.nghiTet + ". Bạn nghe lại các bài cũ cho tai khỏi quên nhé.", "tet"));
+      });
+      var lich = $("lich-ngay");
+      ht.lichNgay.forEach(function (d) {
+        var o = tao("div", null, "ngay");
+        o.appendChild(tao("b", d.thu));
+        o.appendChild(tao("p", "Sáng " + d.sang + ": " + d.viecSang));
+        o.appendChild(tao("p", "Tối " + d.toi + ": " + d.viecToi));
+        o.appendChild(tao("p", "Bạn ghi lại: " + d.ghi));
+        lich.appendChild(o);
       });
     })
-    .catch(function () { ds.textContent = "Chưa mở được danh sách bài. Bạn báo cô giúp nhé."; });
+    .catch(function () { var bd = $("ban-do"); bd.textContent = ""; bd.appendChild(tao("li", "Chưa mở được bản đồ. Bạn tải lại trang, nếu vẫn chưa được thì báo cô giúp nhé.", "loi-tai")); });
 })();
 </script>
 </body>
